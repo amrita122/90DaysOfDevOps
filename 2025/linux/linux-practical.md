@@ -41,20 +41,25 @@ Task:
 Create /devops_workspace and a file project_notes.txt.
 
 mkdir devops_workspace
-touch project_notes.txt
+
+vim project_notes.txt
+
 ls
+
 Set permissions:
 
 Owner can edit, group can read, others have no access.
 
-sudo chown ubuntu:ubuntu devops_workspace/
 chmod 640 project_notes.txt
+
 Use ls -l to verify permissions.
 
 Result:
 
-ubuntu@ip-172-31-0-130:~/devops_workspace$ ls -l
--rw-r----- 1 ubuntu ubuntu 0 Feb 15 16:15 project_notes.txt
+root@ip-172-31-0-130:~/devops_workspace$ ls -l
+
+-rw-r----- 1 root root 0 Feb 18 16:15 project_notes.txt
+
 3️⃣ Log File Analysis with AWK, Grep & Sed
 Logs are crucial in DevOps! You’ll analyze logs using the Linux_2k.log file from LogHub (GitHub Repo).
 
