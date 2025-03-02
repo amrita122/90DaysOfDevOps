@@ -100,8 +100,9 @@ CMD ["python","run.py"]
 ```docker ps```
 - Check logs using:
 ```docker logs <container_id>```
+![pic](https://github.com/user-attachments/assets/94660dc8-5589-40a8-a10b-fc1fedb47227)
+![pic2](https://github.com/user-attachments/assets/ec801d2b-558c-4a69-9647-11846dd8d9c3)
 
----
 
 ## 🏗️ Task 2: Initialize a Git Repository & Create a File
 
