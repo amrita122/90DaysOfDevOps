@@ -47,7 +47,6 @@ Docker makes software development and deployment faster, more reliable, and effi
 ```
 - Compare Virtualization vs. Containerization and explain why containerization is the preferred approach for microservices and CI/CD pipelines.
 
-```
 |Feature Virtualization (VMs) | Containerization (Docker, Kubernetes)|
 |-----------------------------|--------------------------------------|
 |Architecture   | Uses a hypervisor to create multiple virtual machines, each with its own OS. |   Uses a container engine (like Docker) to run multiple lightweight containers on the same OS.|
@@ -56,7 +55,7 @@ Docker makes software development and deployment faster, more reliable, and effi
 |Isolation |  Strong – Each VM runs a full OS, fully isolated. |   Moderate – Containers share the OS but are isolated at the application level.|
 |Portability | Less portable – VMs are large and require specific hypervisor setups. |  Highly portable – Containers run the same way on any system (Linux, Windows, Mac, Cloud).|
 |Scalability | Less efficient – Requires more resources for scaling. |  Highly efficient – Containers can be started, stopped, and scaled instantly.|
-```
+
 
 🖼 **Example of Your Forked Repo:** ![Forked Repository](image.png)
 
