@@ -2,18 +2,18 @@
 ## 📌 Week 5: Docker Basics & Advanced Challenge
 Welcome to the Week 5 Docker Challenge! In this task, you will work with Docker concepts and tools taught by Shubham Bhaiya. This challenge covers the following topics:
 
-Introduction and Purpose: Understand Docker’s role in modern development.
-Virtualization vs. Containerization: Learn the differences and benefits.
-Build Kya Hota Hai: Understand the Docker build process.
-Docker Terminologies: Get familiar with key Docker terms.
-Docker Components: Explore Docker Engine, images, containers, and more.
-Project Building Using Docker: Containerize a sample project.
-Multi-stage Docker Builds / Distroless Images: Optimize your images.
-Docker Hub (Push/Tag/Pull): Manage and distribute your Docker images.
-Docker Volumes: Persist data across container runs.
-Docker Networking: Connect containers using networks.
-Docker Compose: Orchestrate multi-container applications.
-Docker Scout: Analyze your images for vulnerabilities and insights.
+- **Introduction and Purpose**: Understand Docker’s role in modern development.
+- **Virtualization vs. Containerization**: Learn the differences and benefits.
+- **Build Kya Hota Hai**: Understand the Docker build process.
+- **Docker Terminologies**: Get familiar with key Docker terms.
+- **Docker Components**: Explore Docker Engine, images, containers, and more.
+- Project Building Using Docker: Containerize a sample project.
+- Multi-stage Docker Builds / Distroless Images: Optimize your images.
+- Docker Hub (Push/Tag/Pull): Manage and distribute your Docker images.
+- Docker Volumes: Persist data across container runs.
+- Docker Networking: Connect containers using networks.
+- Docker Compose: Orchestrate multi-container applications.
+- Docker Scout: Analyze your images for vulnerabilities and insights.
 
 Complete all the tasks below and document your steps, commands, and observations in a file named solution.md. Finally, share your experience on LinkedIn using the provided guidelines.
 
@@ -57,17 +57,49 @@ Docker makes software development and deployment faster, more reliable, and effi
 |Scalability | Less efficient – Requires more resources for scaling. |  Highly efficient – Containers can be started, stopped, and scaled instantly.|
 
 
-🖼 **Example of Your Forked Repo:** ![Forked Repository](image.png)
+### Task 2️⃣ ****Create a Dockerfile for a Sample Project
 
-### 2️⃣ **Clone the Forked Repository**
+1. Select or Create a Sample Application:
 
-```bash
-# Replace <your-fork-url> with your forked repository link
-git clone <your-fork-url>
-cd 90DaysOfDevOps/2025/git/01_Git_and_Github_Basics
+- Choose a simple application (for example, a basic Node.js, Python, or Java app that prints “Hello, Docker!” or serves a simple web page).
+# Base image (OS)
+
+FROM python:3.9-slim
+
+# Working directory
+
+WORKDIR /app
+
+# Copy src code to container
+
+COPY . .
+
+# Run the build commands
+
+RUN pip install -r requirements.txt
+
+# expose port 80
+
+EXPOSE 80
+
+# serve the app / run the app (keep it running)
+
+CMD ["python","run.py"]
 ```
+2. Write a Dockerfile:
 
-🖼 **Example of Cloning a Repo:** ![Cloning Repository](image-1.png)
+- Create a Dockerfile that defines how to build an image for your application.
+- Include comments in your Dockerfile explaining each instruction.
+- **Build your image using:
+```docker build -t <your-username>/sample-app:latest .```
+- **Verify Your Build:
+
+- Run your container locally to ensure it works as expected:
+```docker run -d -p 8080:80 <your-username>/sample-app:latest```
+- Verify the container is running with:
+```docker ps```
+- Check logs using:
+```docker logs <container_id>```
 
 ---
 
