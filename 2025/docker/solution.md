@@ -150,25 +150,40 @@ CMD ["run.py"]
 ```
 2. Compare Image Sizes:
 - Build your image before and after the multi-stage build modification and compare their sizes using:
-```docker images
-```
+  docker images`
 ![pic3 (2)](https://github.com/user-attachments/assets/46c9dbfe-4c11-473a-a548-ae40f439dffa)
 ![pic4](https://github.com/user-attachments/assets/9ad158d5-f2b9-4024-b1f6-c6af80b80352)
 
-
-### 2️⃣ **Create and Commit a File**
-
-```bash
-echo "Hello, this is my Git challenge!" > info.txt
-git add info.txt
-git commit -m "Initial commit: Add info.txt"
+3. Document the Differences:
+- Explain in solution.md the benefits of multi-stage builds and the impact on image size.
+```A multi-stage build is a Docker feature that allows you to use multiple FROM statements in a Dockerfile, where each stage produces an intermediate container, and only the final stage is included in the final image.
+🔹 Multi-stage builds significantly reduce image size → Faster deployment & lower storage costs.
+🔹 Improved security by removing unnecessary dependencies.
+🔹 Faster CI/CD pipelines due to smaller image pull/push times.
+🔹 More maintainable Dockerfiles with clear separation of build and runtime stages.
 ```
 
-🖼 **Hands-on Example:** ![git init & commit](image-2.png)
+## 🔗 Task 5: Manage Your Image with Docker Hub
+1. Tag Your Image:
+- Tag your image appropriately:
+```
+docker tag <your-username>/sample-app:latest <your-username>/sample-app:v1.0
+```
+2. Push Your Image to Docker Hub:
+- Log in to Docker Hub if necessary:
+```
+docker login
+```
+- push the image:
+```
+docker push <your-username>/sample-app:v1.0
+```
+3. (Optional) Pull the Image:
+- Verify by pulling your image:
+```
+docker pull <your-username>/sample-app:v1.0
+```
 
----
-
-## 🔗 Task 3: Configure Remote & Push Changes
 
 ### 1️⃣ **Configure Remote URL with PAT**
 
