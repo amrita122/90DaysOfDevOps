@@ -190,6 +190,8 @@ docker push <your-username>/sample-app:v1.0
 ```
 docker pull <your-username>/sample-app:v1.0
 ```
+![pic5](https://github.com/user-attachments/assets/6f8bbd78-10c8-43ba-b4fc-920315e5db4a)
+![pic6](https://github.com/user-attachments/assets/31c2e74b-4e3e-4341-a7cb-bc15f94e1e05)
 
 
 ### 1️⃣ **Configure Remote URL with PAT**
