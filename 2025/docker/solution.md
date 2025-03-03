@@ -231,6 +231,7 @@ docker network create my_network
 docker run -d --name sample-app --network my_network <your-username>/sample-app:v1.0
 docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
+![pic9](https://github.com/user-attachments/assets/e9971e4d-4dac-4a19-aeac-2ad17852207a)
 3. Document the Process:
 - In solution.md, describe how Docker networking enables container communication and its significance in multi-container applications.
 ```
@@ -239,6 +240,7 @@ docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysq
 ✔ Scalability: Works across multiple hosts in Swarm/Kubernetes.
 ✔ Flexibility: Supports different network types for different use cases.
 ```
+
 ### 1️⃣ **Create and Switch to a New Branch**
 
 ```bash
