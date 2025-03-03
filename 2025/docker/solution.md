@@ -217,17 +217,23 @@ docker run -d -v my_volume:/app/data <your-username>/sample-app:v1.0
 ✔ Simplified Backups: Makes data management and recovery easier.
 ```
 
-### **Check Commit Logs**
-
-```bash
-git log
-```
-
-🖼 **Example Output:** ![Git Log](image-4.png)
-
 ---
 
-## 🌿 Task 5: Branching & Merging
+## 🌿 Task 7: Task 7: Configure Docker Networking
+1. Create a Custom Docker Network:
+- Create a custom Docker network:
+```
+docker network create my_network
+```
+2. Run Containers on the Same Network:
+- Run two containers (e.g., your sample app and a simple database like MySQL) on the same network to demonstrate inter-container communication:
+```
+docker run -d --name sample-app --network my_network <your-username>/sample-app:v1.0
+docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysql:latest
+```
+3. Document the Process:
+- In solution.md, describe how Docker networking enables container communication and its significance in multi-container applications.
+
 
 ### 1️⃣ **Create and Switch to a New Branch**
 
