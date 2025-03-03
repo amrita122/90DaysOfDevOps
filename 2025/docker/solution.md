@@ -7,13 +7,13 @@ Welcome to the Week 5 Docker Challenge! In this task, you will work with Docker 
 - **Build Kya Hota Hai**: Understand the Docker build process.
 - **Docker Terminologies**: Get familiar with key Docker terms.
 - **Docker Components**: Explore Docker Engine, images, containers, and more.
-- Project Building Using Docker: Containerize a sample project.
-- Multi-stage Docker Builds / Distroless Images: Optimize your images.
-- Docker Hub (Push/Tag/Pull): Manage and distribute your Docker images.
-- Docker Volumes: Persist data across container runs.
-- Docker Networking: Connect containers using networks.
-- Docker Compose: Orchestrate multi-container applications.
-- Docker Scout: Analyze your images for vulnerabilities and insights.
+- **Project Building Using Docker**: Containerize a sample project.
+- **Multi-stage Docker Builds / Distroless Images**: Optimize your images.
+- **Docker Hub (Push/Tag/Pull)**: Manage and distribute your Docker images.
+- **Docker Volumes**: Persist data across container runs.
+- **Docker Networking**: Connect containers using networks.
+- **Docker Compose**: Orchestrate multi-container applications.
+- **Docker Scout**: Analyze your images for vulnerabilities and insights.
 
 Complete all the tasks below and document your steps, commands, and observations in a file named solution.md. Finally, share your experience on LinkedIn using the provided guidelines.
 
@@ -297,6 +297,9 @@ docker-compose up -d
 ```
 docker-compose down
 ```
+![pic10](https://github.com/user-attachments/assets/91ac6831-cf60-49b5-8cac-cbc638d63c48)
+![pic11](https://github.com/user-attachments/assets/1cdb54ba-e785-44d2-971f-f51f403d2a6b)
+![pic12](https://github.com/user-attachments/assets/f31b28be-a62b-4d95-a378-753eb574fd7f)
 3. Document the Process:
 - Explain each service and configuration in your solution.md
 ```
