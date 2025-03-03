@@ -233,7 +233,10 @@ docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysq
 ```
 3. Document the Process:
 - In solution.md, describe how Docker networking enables container communication and its significance in multi-container applications.
-
+✔ Seamless Communication: Containers talk to each other within a defined network.
+✔ Security & Isolation: Different networks prevent unauthorized access.
+✔ Scalability: Works across multiple hosts in Swarm/Kubernetes.
+✔ Flexibility: Supports different network types for different use cases.
 
 ### 1️⃣ **Create and Switch to a New Branch**
 
