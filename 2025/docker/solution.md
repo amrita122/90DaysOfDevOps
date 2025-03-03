@@ -78,26 +78,80 @@ EXPOSE 80
 CMD ["python","run.py"]
 ```
 2. Write a Dockerfile:
-
 - Create a Dockerfile that defines how to build an image for your application.
 - Include comments in your Dockerfile explaining each instruction.
-- **Build your image using:
-```docker build -t <your-username>/sample-app:latest .```
-- **Verify Your Build:
-
+- Build your image using:
+```docker build -t <your-username>/sample-app:latest .
+```
+- Verify Your Build:
 - Run your container locally to ensure it works as expected:
-```docker run -d -p 8080:80 <your-username>/sample-app:latest```
+```docker run -d -p 8080:80 <your-username>/sample-app:latest
+```
 - Verify the container is running with:
-```docker ps```
+```docker ps
+```
 - Check logs using:
-```docker logs <container_id>```
+```docker logs <container_id>
+```
 ![pic](https://github.com/user-attachments/assets/94660dc8-5589-40a8-a10b-fc1fedb47227)
 ![pic2](https://github.com/user-attachments/assets/ec801d2b-558c-4a69-9647-11846dd8d9c3)
 
 
-## 🏗️ Task 2: Initialize a Git Repository & Create a File
+## 🏗️ Task 3: Explore Docker Terminologies and Components
+1. Document Key Terminologies:
+- In your solution.md, list and briefly describe key Docker terms such as image, container, Dockerfile, volume, and network.
+|Docker Term | Description |
+|------------|-------------|
+|Image | A pre-packaged application with all dependencies.|
+|Container | A running instance of an image, providing an isolated environment.|
+|Dockerfile | A script with instructions to build a Docker image.|
+|Volume | Persistent storage for containers.|
+|Network | Enables secure communication between containers.|
 
-### 1️⃣ **Initialize Git Repository**
+- Explain the main Docker components (Docker Engine, Docker Hub, etc.) and how they interact.
+|Component | Description|
+|----------|------------|
+|Docker Engine | Core service that builds, runs, and manages containers.|
+|Docker Image  |  A pre-packaged application that serves as a template for containers.|
+|Docker Container  |  A running instance of a Docker image.|
+|Dockerfile | A script with instructions to build a custom image.|
+|Docker Hub | A cloud registry for storing and sharing images.|
+|Docker Compose | A tool to manage multi-container applications.|
+|Docker Network | Enables secure communication between containers.|
+|Docker Volume | Provides persistent storage for containers.|
+
+## Task 4 : Optimize Your Docker Image with Multi-Stage Builds
+
+1. Implement a Multi-Stage Docker Build:
+- Modify your existing Dockerfile to include multi-stage builds.
+- Aim to produce a lightweight, distroless (or minimal) final image.
+```
+#### Build Stage
+FROM python:3.9-slim AS builder
+WORKDIR /app
+#### Copy dependency file first for efficient caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt --target=/app/deps
+#### Copy application source code
+COPY . .
+#### Final Distroless Stage
+FROM gcr.io/distroless/python3-debian11
+WORKDIR /app
+#### Copy dependencies from the builder stage
+COPY --from=builder /app/deps /app/deps
+COPY --from=builder /app .
+#### Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH="/app/deps"
+#### Expose the application port
+EXPOSE 80
+#### Run the application
+CMD ["run.py"]
+```
+2. Compare Image Sizes:
+- Build your image before and after the multi-stage build modification and compare their sizes using:
+```docker images
+```
 
 ```bash
 mkdir week-4-challenge
