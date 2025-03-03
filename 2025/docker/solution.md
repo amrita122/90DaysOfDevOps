@@ -206,6 +206,8 @@ docker volume create my_volume
 ```
 docker run -d -v my_volume:/app/data <your-username>/sample-app:v1.0
 ```
+![pic7](https://github.com/user-attachments/assets/69911a2c-bcd0-4bad-b0e7-01f2da925271)
+
 3. Document the Process:
 - In solution.md, explain how Docker volumes help with data persistence and why they are useful.
 ```
