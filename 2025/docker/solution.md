@@ -81,17 +81,21 @@ CMD ["python","run.py"]
 - Create a Dockerfile that defines how to build an image for your application.
 - Include comments in your Dockerfile explaining each instruction.
 - Build your image using:
-```docker build -t <your-username>/sample-app:latest .
+```
+docker build -t <your-username>/sample-app:latest .
 ```
 - Verify Your Build:
 - Run your container locally to ensure it works as expected:
-```docker run -d -p 8080:80 <your-username>/sample-app:latest
+```
+docker run -d -p 8080:80 <your-username>/sample-app:latest
 ```
 - Verify the container is running with:
-```docker ps
+```
+docker ps
 ```
 - Check logs using:
-```docker logs <container_id>
+```
+docker logs <container_id>
 ```
 ![pic](https://github.com/user-attachments/assets/94660dc8-5589-40a8-a10b-fc1fedb47227)
 ![pic2](https://github.com/user-attachments/assets/ec801d2b-558c-4a69-9647-11846dd8d9c3)
@@ -156,7 +160,8 @@ CMD ["run.py"]
 
 3. Document the Differences:
 - Explain in solution.md the benefits of multi-stage builds and the impact on image size.
-```A multi-stage build is a Docker feature that allows you to use multiple FROM statements in a Dockerfile, where each stage produces an intermediate container, and only the final stage is included in the final image.
+```
+A multi-stage build is a Docker feature that allows you to use multiple FROM statements in a Dockerfile, where each stage produces an intermediate container, and only the final stage is included in the final image.
 🔹 Multi-stage builds significantly reduce image size → Faster deployment & lower storage costs.
 🔹 Improved security by removing unnecessary dependencies.
 🔹 Faster CI/CD pipelines due to smaller image pull/push times.
