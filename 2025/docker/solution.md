@@ -241,38 +241,85 @@ docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysq
 ✔ Flexibility: Supports different network types for different use cases.
 ```
 
-### 1️⃣ **Create and Switch to a New Branch**
-
-```bash
-git branch feature-update
-git switch feature-update
-```
-
-### 2️⃣ **Modify and Commit Changes in New Branch**
-
-```bash
-echo "Adding more details to the file." >> info.txt
-git add info.txt
-git commit -m "Feature update: Enhance info.txt"
-git push origin feature-update
-```
-
-🖼 **Hands-on Example:** ![Feature Branch](image-5.png)
-
-### 3️⃣ **Merge Feature Branch to Main**
-
-- Create a **Pull Request (PR)** on GitHub and merge changes.
-- Optionally you can Delete the feature branch after merging (I didn't do that for now).
-
-🖼 **Example of Opening a Pull Request:** ![Option to Open PR](image-6.png)
-![Open PR Section](image-7.png)
-
-🖼 **Example of Merging a PR:** ![Merge PR](image-8.png)
-![Delete Branch Option](image-9.png)
-
 ---
 
-## 🔒 Task 6: SSH Authentication
+## 🔒 Task 8: Orchestrate with Docker Compose
+1. Create a docker-compose.yml File:
+- Write a docker-compose.yml file that defines at least two services (e.g., your sample app and a database).
+- Include definitions for services, networks, and volumes.
+```
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: python-app
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=rootpassword
+      - DATABASE_NAME=mydatabase
+    networks:
+      - my_network
+
+  db:
+    image: mysql:5.7
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - my_network
+    volumes:
+      - my_volume:/var/lib/mysql
+
+networks:
+  my_network:
+
+volumes:
+  my_volume:
+```
+2. Deploy Your Application:
+- Bring up your application using:
+```
+docker-compose up -d
+```
+- Test the setup, then shut it down using:
+```
+docker-compose down
+```
+3. Document the Process:
+- Explain each service and configuration in your solution.md
+```
+✔Specifies the Docker Compose file format version.
+✔"3.8" is compatible with modern Docker versions.
+✔ build: . → Builds the container using the Dockerfile in the same directory.
+✔ container_name: python-app → Assigns a custom name to the container.
+✔ ports: → Maps container port 80 to host port 80 for external access.
+✔ depends_on: → Ensures MySQL (db) starts before the Python app.
+✔ environment: → Sets environment variables for database connection.
+✔ networks: → Connects to custom network (my_network) for container communication.
+✔ image: mysql:5.7 → Uses MySQL 5.7 as the database engine.
+✔ container_name: mysql-db → Assigns a name to the MySQL container.
+✔ restart: always → Restarts the container automatically if it crashes.
+✔ environment: → Sets up credentials and database configuration.
+✔ ports: → Maps MySQL port 3306 for database connections.
+✔ networks: → Connects to my_network for inter-container communication.
+✔ volumes: → Uses a persistent volume (my_volume) to store database data.
+✔ Creates a user-defined network for secure container-to-container communication.
+✔ Both app and db services can talk to each other using service names (e.g., db).
+✔ my_volume ensures MySQL data is not lost when the container stops.
+✔ Stores database files inside /var/lib/mysql in a Docker-managed volume.
+```
 
 ### 1️⃣ **Generate SSH Key**
 
