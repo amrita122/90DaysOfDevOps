@@ -152,12 +152,9 @@ CMD ["run.py"]
 - Build your image before and after the multi-stage build modification and compare their sizes using:
 ```docker images
 ```
+![pic3 (2)](https://github.com/user-attachments/assets/46c9dbfe-4c11-473a-a548-ae40f439dffa)
+![pic4](https://github.com/user-attachments/assets/9ad158d5-f2b9-4024-b1f6-c6af80b80352)
 
-```bash
-mkdir week-4-challenge
-cd week-4-challenge
-git init
-```
 
 ### 2️⃣ **Create and Commit a File**
 
