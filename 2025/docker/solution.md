@@ -193,20 +193,27 @@ docker pull <your-username>/sample-app:v1.0
 ![pic5](https://github.com/user-attachments/assets/6f8bbd78-10c8-43ba-b4fc-920315e5db4a)
 ![pic6](https://github.com/user-attachments/assets/31c2e74b-4e3e-4341-a7cb-bc15f94e1e05)
 
-
-### 1️⃣ **Configure Remote URL with PAT**
-
-```bash
-# Replace <your-username> and <your-PAT> with actual values
-git remote add origin https://<your-username>:<your-PAT>@github.com/<your-username>/90DaysOfDevOps.git
-git push -u origin main
-```
-
-🖼 **Hands-on Example:** ![Git Push](image-3.png)
-
 ---
 
-## 🔍 Task 4: View Git Commit History
+## 🔍 Task 6: Persist Data with Docker Volumes
+1. Create a Docker Volume:
+- Create a Docker volume:
+```
+docker volume create my_volume
+```
+2. Run a Container with the Volume:
+- Run a container using the volume to persist data:
+```
+docker run -d -v my_volume:/app/data <your-username>/sample-app:v1.0
+```
+3. Document the Process:
+- In solution.md, explain how Docker volumes help with data persistence and why they are useful.
+```
+✔ Persistent Data: Ensures important files survive container restarts & removals.
+✔ Efficient Data Sharing: Enables communication between multiple containers.
+✔ Better Performance: Optimized for Docker-managed storage.
+✔ Simplified Backups: Makes data management and recovery easier.
+```
 
 ### **Check Commit Logs**
 
