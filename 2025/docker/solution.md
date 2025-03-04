@@ -358,30 +358,38 @@ docker scout cves <your-username>/sample-app:v1.0 > scout_report.txt
 - Reflect on how these insights might influence your image optimization or overall security strategy.
 - Optional: Include screenshots or attach the saved report file (scout_report.txt) as evidence of your analysis.
 
+## ~_~L Task 9: Documentation and Critical Reflection
+1. Update solution.md:
+- List all the commands and steps you executed.
+- Provide explanations for each task and detail any improvements made (e.g., image optimization with multi-stage builds).
+2. Reflect on Docker’s Impact:
+- Write a brief reflection on the importance of Docker in modern software development, discussing its benefits and potential challenges.
+📢 How to Submit
+1. Push Your Final Work:
+- Ensure that your complete project—including your Dockerfile, docker-compose.yml, solution.md, and any additional files (e.g., the Docker Scout report if saved)—is committed and pushed to your repository.
+- Verify that all your changes are visible in your repository.
+2. Create a Pull Request (PR):
+- Open a PR from your working branch (e.g., docker-challenge) to the main repository.
+- Use a clear and descriptive title, for example:
+- Week 5 Challenge - DevOps Batch 9: Docker Basics & Advanced Challenge
+- In the PR description, include the following details:
+- A brief summary of your approach and the tasks you completed.
+- A list of the key Docker commands used during the challenge.
+- Any insights or challenges you encountered (e.g., lessons learned from multi-stage builds or Docker Scout analysis).
+3 Share Your Experience on LinkedIn:
 
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-- Go to GitHub **Settings > SSH Keys**, add the key.
-
-🖼 **Option to add new SSH Key:** ![Add SSH to GitHub](image-10.png)
-
-### 3️⃣ **Update Remote URL to SSH**
-
-```bash
-git remote set-url origin git@github.com:<your-username>/90DaysOfDevOps.git
-git push origin feature-update
-```
-
-🖼 **Example:** ![SSH Push](image-11.png)
-
----
-
-## 🎯 Conclusion
-
-🎉 Successfully completed **Week 4 Challenge** of **#90DaysOfDevOps**! This challenge deepened my understanding of **Git workflows, remote configurations, authentication, and branching strategies.**
-
-🖼 **Final Screenshot:** ![Final Success](image-12.png)
+- Write a LinkedIn post summarizing your Week 5 Docker challenge experience.
+- In your post, include:
+  - A brief description of the challenge and what you learned.
+  - Screenshots, logs, or excerpts from your solution.md that highlight key steps or interesting findings (e.g., Docker Scout reports).
+  - The hashtags: #90DaysOfDevOps #Docker #DevOps
+  - Optionally, links to any blog posts or related GitHub repositories that further explain your journey.
+~_~S Additional Resources
+- Docker Documentation
+- Docker Hub
+- Multi-stage Builds
+- Docker Compose
+- Docker Scan (Vulnerability Scanning)
+- Containerization vs. Virtualization
+Happy coding and best of luck with this Docker challenge! Document your journey thoroughly in solution.md and refer to these resources for additional guidance.
 
